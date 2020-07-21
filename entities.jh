@@ -1,0 +1,21 @@
+entity File {
+	name String required
+    file Blob required
+    //user
+}
+
+entity Profile {
+	phoneNumber String required
+}
+
+relationship OneToOne {
+	Profile{user required} to User
+}
+
+relationship OneToMany {
+ 	Profile{file} to File{user required}
+}
+
+filter *
+paginate * with pagination
+service * with serviceClass

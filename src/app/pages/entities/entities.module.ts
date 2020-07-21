@@ -16,6 +16,14 @@ const routes: Routes = [
     },
     canActivate: [UserRouteAccessService],
   },
+  {
+    path: 'file',
+    loadChildren: () => import ('../entities/file/file.module').then(m => m.FilePageModule),
+  },
+  {
+    path: 'profile',
+    loadChildren:() => import( '../entities/profile/profile.module').then(m => m.ProfilePageModule),
+  },
   /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
 ];
 
